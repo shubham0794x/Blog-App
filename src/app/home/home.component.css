@@ -1,0 +1,22 @@
+h1{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+}
+
+p {
+    color: olive;
+}
+
+.odd {
+    background-color: blanchedalmond;
+    color: black;
+}
+
+.even {
+    background-color: crimson;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}

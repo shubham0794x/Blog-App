@@ -1,0 +1,14 @@
+<h1>This is the home component</h1>
+
+<p>{{ name + ' ' + lastName}}</p>
+
+
+<input type="text" placeholder="Introduce your name" [value]="name" (keyup)="updateName($event)" />
+<input type="text" placeholder="Introduce your last name" [(ngModel)]="lastName" />
+<button [disabled]="isDisabled" (click)="printWelcome()">Submit</button>
+<button (click)="toggleSubmitBtn()">Toggle submit btn</button>
+
+<div *ngIf="displayImportantMsg()">
+    <p [ngStyle]="{'color': textColor, 'background-color': bgColor, 'font-size.px': 30}" (copy)="changeColor()">This is a secret message</p>
+    <button (click)="changeColor()">Change color</button>
+</div>

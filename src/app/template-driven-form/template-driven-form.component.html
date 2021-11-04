@@ -1,0 +1,24 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <div>
+        <input ngModel required email name="email" type="text" placeholder="Email..." #emailInput="ngModel">
+        <p class="error-msg" *ngIf="emailInput.invalid && emailInput.touched">Please use a proper email address</p>
+      </div>
+      <div>
+        <input ngModel required minlength="7" name="password" type="password" placeholder="Password..." #passwordInput="ngModel">
+        <p class="error-msg" *ngIf="passwordInput.invalid && passwordInput.touched">The password must be at least 7 characters</p>
+      </div>
+      <div>
+        <select ngModel name="role" required #roleInput="ngModel">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+          <option value="superAdmin">Super Admin</option>
+        </select>
+        <p class="error-msg" *ngIf="roleInput.invalid && roleInput.touched">Please pick a role</p>
+      </div>
+  
+      <div>
+        <button type="submit" [disabled]="form.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
